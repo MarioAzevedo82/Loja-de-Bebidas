@@ -20,3 +20,22 @@ header {
     top: 0;
     z-index: 100;
 }
+
+header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    color: aliceblue;
+    margin-left: 15px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header h1 {
+    font-size: 2rem;
+}
