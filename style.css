@@ -139,3 +139,11 @@ header h1 {
 .fab.fa-whatsapp:hover {
     color: #1ebd5a;
 }
+
+footer {
+    background-color: var(--section-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 15px;
+    margin-top: ;
+}
