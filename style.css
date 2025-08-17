@@ -178,3 +178,13 @@ button:active {
     background-color: black;
     transform: scale(.9);
 }
+
+.carrinho h2 {
+    font-size: 1.8rem;
+    color: var(--header-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+    border-bottom: 2px solid #0066cc;
+    padding-bottom: 5px;
+}
