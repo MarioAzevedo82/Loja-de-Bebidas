@@ -12,7 +12,7 @@ botoes.forEach(botao => {
 
         contador.textContent = carrinho.length
 
-        alert(`${produto} adicionado ao carrinho!`)
+        mostrarCarrinho()
     })
 })
 
@@ -23,6 +23,8 @@ function mostrarCarrinho() {
     carrinho.forEach((item) => {
         const li = document.createElement("li");
         li.textContent = `${item.produto} - ${item.preco}`;
-        lista.appendChild(li)
+        lista.appendChild(li);
     })
 }
+
+
