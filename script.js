@@ -15,3 +15,14 @@ botoes.forEach(botao => {
         alert(`${produto} adicionado ao carrinho!`)
     })
 })
+
+function mostrarCarrinho() {
+    const lista = document.getElementById("carrinho");
+    lista.innerHTML = "";
+
+    carrinho.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = `${item.produto} - ${item.preco}`;
+        lista.appendChild(li)
+    })
+}
