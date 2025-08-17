@@ -1,4 +1,4 @@
-let carrinho = []
+let carrinho = {}
 
 const botoes = document.querySelectorAll(".adicionar")
 const contador = document.getElementById("carrinho-contador")
@@ -8,9 +8,17 @@ botoes.forEach(botao => {
         const produto = e.target.parentElement.querySelector("h2").textContent
         const preco = e.target.parentElement.querySelector("p").textContent
 
-        carrinho.push({produto,preco})
+        if (carrinho[produto]) {
+            carrinho[produto].quantidade++;
+        } else {
+            carrinho[produto] = {preco, quantidade:1}
+        }
 
-        contador.textContent = carrinho.length
+        let totalItens = 0;
+        for(let item in carrinho) {
+            totalItens += carrinho[item].quantidade
+        }
+        contador.textContent = totalItens
 
         mostrarCarrinho()
     })
@@ -20,11 +28,11 @@ function mostrarCarrinho() {
     const lista = document.getElementById("carrinho");
     lista.innerHTML = "";
 
-    carrinho.forEach((item) => {
+    for(let produto in carrinho) {
         const li = document.createElement("li");
-        li.textContent = `${item.produto} - ${item.preco}`;
+        li.textContent = `${produto} - ${carrinho[produto].preco} (X${carrinho[produto].quantidade})`;
         lista.appendChild(li);
-    })
+    }
 }
 
 
