@@ -14,15 +14,23 @@ botoes.forEach(botao => {
             carrinho[produto] = {preco, quantidade:1}
         }
 
-        let totalItens = 0;
-        for(let item in carrinho) {
-            totalItens += carrinho[item].quantidade
-        }
-        contador.textContent = totalItens
-
+        atualizarContador()
+        
         mostrarCarrinho()
     })
 })
+
+function atualizarContador() {
+    let totalItens = 0;
+    for(let item in carrinho) {
+        totalItens += carrinho[item].quantidade
+    }
+    
+    contador.textContent = totalItens
+}
+
+
+
 
 function mostrarCarrinho() {
     const lista = document.getElementById("carrinho");
@@ -34,7 +42,23 @@ function mostrarCarrinho() {
         const item = carrinho[produto]
         const li = document.createElement("li");
         li.textContent = `${produto} - ${item.preco} (X${item.quantidade})`;
-        lista.appendChild(li);
+        
+        const btnRemover = document.createElement("button");
+        btnRemover.innerHTML = '<i class="fas fa-trash"></i> Excluir'
+        btnRemover.style.marginLeft = "10px"
+        btnRemover.style.cursor = "pointer"
+        btnRemover.addEventListener("click", () => {
+            item.quantidade--
+            if (item.quantidade === 0) {
+                delete carrinho[produto]
+            }
+
+            atualizarContador()
+            mostrarCarrinho()
+        })
+
+        li.appendChild(btnRemover)
+        lista.appendChild(li)
 
         const valor = Number(item.preco.replace("R$", "").replace(",", "."));
         total += valor * item.quantidade
