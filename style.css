@@ -156,7 +156,11 @@ header h1 {
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
+}
 
+.finalizar-btn:hover {
+    background-color: var(--text-color);
+    transform: scale(1.2);
 }
 
 footer {
