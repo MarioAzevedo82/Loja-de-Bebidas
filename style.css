@@ -140,6 +140,25 @@ header h1 {
     color: #1ebd5a;
 }
 
+.finalizar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 10px;
+    background-color: #000;
+    color: var(--whatsapp-color);
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
 footer {
     background-color: var(--section-color);
     color: var(--text-color);

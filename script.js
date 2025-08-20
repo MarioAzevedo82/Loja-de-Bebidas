@@ -47,6 +47,7 @@ function mostrarCarrinho() {
         btnRemover.innerHTML = '<i class="fas fa-trash"></i> Excluir'
         btnRemover.style.marginLeft = "10px"
         btnRemover.style.cursor = "pointer"
+        btnRemover.style.borderRadius = "50px"
         btnRemover.addEventListener("click", () => {
             item.quantidade--
             if (item.quantidade === 0) {
