@@ -98,11 +98,10 @@ document.getElementById("finalizarPedido").addEventListener("click", function ()
     const numero = "554892235568"; // Exemplo: 55 + DDD + número
 
     // Monta o link
-    // Garante que a mensagem seja compatível com URL
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    const url = `https://wa.me/${numero}?text=${mensagem}`;
 
+    // Abre o WhatsApp
     window.open(url, "_blank");
-
 });
 
 
